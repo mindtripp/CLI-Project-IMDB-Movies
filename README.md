@@ -1,4 +1,4 @@
-#Movie CLI project!
+## Movie CLI project!
 
 Welcome to the movie review app! In this directory, you will be able to up your Ruby library into a gem. Put your Ruby code in the file `lib/test/cli`. To experiment with that code, run `bin/console` for an interactive prompt.
 
