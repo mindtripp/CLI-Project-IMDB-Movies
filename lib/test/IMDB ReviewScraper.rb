@@ -2,30 +2,28 @@ class IMDBReviewScraper
 
   #first level scraping
   def self.scrape_and_make_reviews
-    url = "https://www.imdb.com/?ref_=nv_home"
-    html_to_elements = open(url)
-    parsed_html_elements = Nokogiri::HTML(html_to_elements)
-    review_elements = parsed_html_elements.css('.review')
-    review_elements.map do |element|
-      binding.pry
-      movie_rating = element.css('.ipc-rating-star--baseAlt').text
-      rating = Rating.find_or_create_by(movie_rating)
-      movie_title = element.css('.ipc-poster-card__title ipc-poster-card__title--clamp-2 ipc-poster-card__title-href').text
-      title = Title.find_or_create_by(movie_title)
-      url = element.css('a.ipc-focusable').attr('href').value
-      new_review = Review.new(rating, title)
+    homepage = Nokogiri::HTML(open("https://www.imdb.com/?ref_=nv_home"))
+    #binding.pry
+    homepage.css("ipc-rating-star.ipc-rating-star--baseAlt.ipc-rating-star--imdb").each do |element|
+      movie_rating = element.css("ipc-poster-card__top")[0].text
+      movie_title = element.css("ipc-poster-card__title-href")[0].text
+      link_to_summary = "https://www.imdb.com" + element.css('a.ipc-focusable').attribute("href").value
+      new_review = Review.new(movie_rating, movie_title, link_to_summary)
+      
+      #binding.pry
+      scrape_review_blurb(new_review)
     end
+    
   end
 
   #second level scraping 
-  def self.scrape_review_blurb(url)
-    html_to_elements = open(url)
-    parsed_html_elements = Nokogiri::HTML(html_to_elements)   
-    review_elements = parsed_html_elements.css('.review')
-    review_elements.map do |element|
-        binding.pry
-      movie_summary = element.css('.summary_text').text
-      summary = Summary.find_or_create_by(movie_summary)
+  def self.scrape_review_blurb(new_review)  
+    movie_information = Nokogiri::HTML(open(new_review.link_to_summary))
+        movie_information.css(".plot_summary").each do |movie_info|
+          new_review.movie_summary = movie_info.css('.summary_text').text
+          
+        end
   end
+
 end
 
