@@ -26,4 +26,3 @@ class IMDBReviewScraper
   end
 
 end
-
