@@ -1,6 +1,6 @@
 ## Movie CLI project!
 
-Welcome to the movie review app! In this directory, you will be able to get movie reviews from the fanpage fasvorites in  IMDB. To begin Put your Ruby code in the file `lib/test/cli`. To experiment with that code, run `bin/console` for a brief interactive intorduction!
+Welcome to the movie review app! In this directory, you will be able to get movie reviews from the fanpage fasvorites in  IMDB. To begin Put your Ruby code in the file `lib/IMDBReview/cli`. To experiment with that code, run `bin/console` for a brief interactive intorduction!
 
 ## Installation
 
