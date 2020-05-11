@@ -1,26 +1,31 @@
 ## Movie CLI project!
 
-Welcome to the movie review app! In this directory, you will be able to up your Ruby library into a gem. Put your Ruby code in the file `lib/test/cli`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to the movie review app! In this directory, you will be able to get movie reviews from the fanpage fasvorites in  IMDB.com Put your Ruby code in the file `lib/test/cli`. To experiment with that code, run `bin/console` for a brief interactive intorduction!
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-```ruby
-gem 'test-cli'
-```
+source 'https://rubygems.org'
+
+gem 'pry'
+gem 'nokogiri'
+gem 'require_all'
 
 And then execute:
 
-    $ bundle
+    $ bundle install 
 
 Or install it yourself as:
 
-    $ gem install test-cli
+ 'install gem'
+ 
+gem 'pry'
+gem 'nokogiri'
+gem 'require_all'
 
 ## Usage
 
-TODO: Write usage instructions here
 
 ## Development
 
