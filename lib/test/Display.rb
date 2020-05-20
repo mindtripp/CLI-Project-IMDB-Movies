@@ -22,30 +22,10 @@ class Display
 
     
     def self.prompt_to_pick_review
-        puts "Suprise! We actually have 250 movie in our inventory." 
-        puts "Pick your lucky number to see the corresponding movie summary: (Enter a number from 1 - 250)"
+        puts "Suprise! We have the top 10 movies in our inventory." 
+        puts "Pick your lucky number to see the corresponding movie summary: (Enter a number from 1 - 10)"
     end
 
-
-    # def self.validation_input(input)
-    #     if input.to_i <= Review.all.size
-    #         validation = true
-    #         review = Review.all[input.to_i-1]
-    #         puts "Here is your selected movie's summary:"
-    #         puts review.movie_title.split("\n")[2]
-    #         puts review.movie_summary
-    #     elsif input.to_i > Review.all.size
-    #         validation = false
-    #         puts "Please choose a number from 1-250."
-    #     else
-    #         validation = false
-    #         puts "Invalid input, please try again (Enter a number)."
-    #     end
-    # end
-
-    # def self.print_selected_summary(movie_summary)
-    #     puts "Here is your selected movie's summary: + #{selected_summary.movie_summary}"
-    # end
-
 end
+
 
