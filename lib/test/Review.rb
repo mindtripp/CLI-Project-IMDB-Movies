@@ -17,13 +17,13 @@ class Review
   end
 
   def self.print_all_reviews
-    Review.all.each_with_index do |review, index|
+    Review.all.each_with_index do |review, index|  #Review[0..5]
           puts "== Review ##{index + 1} ===" 
           puts "movie rating:" + review.movie_rating.split("\n")[1]
           puts "movie title:" + review.movie_title.split("\n")[2]
-          puts review.movie_summary
           puts "==================" 
-    end          
+    end     
+       
   end
 
 end
