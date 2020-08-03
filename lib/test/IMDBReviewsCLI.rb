@@ -1,5 +1,6 @@
 class IMDBReviewsCLI
 
+  
     def run
         system("clear")
         Display.greet
