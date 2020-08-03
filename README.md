@@ -1,8 +1,8 @@
-## Movie CLI project!
+# Movie CLI project!
 
 Welcome to the movie review app! In this directory, you will be able to get movie reviews from the fanpage fasvorites in  IMDB. To begin Put your Ruby code in the file `lib/IMDBReview/cli`. To experiment with that code, run `bin/console` for a brief interactive intorduction!
 
-## Installation
+# Installation
 
 Add this line to your application's Gemfile:
 
@@ -24,10 +24,10 @@ gem 'pry'
 gem 'nokogiri'
 gem 'require_all'
 
-## Usage
+# Usage
 
 
-## Development
+# Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
