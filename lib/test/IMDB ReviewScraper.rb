@@ -8,7 +8,6 @@ class IMDBReviewScraper
 
     homepage.css('.lister-list').css('tr').each do |element|  
       
-      #binding.pry
       movie_rating = element.css(".ratingColumn.imdbRating").text #ipc-rating-star ipc-rating-star--baseAlt ipc-rating-star--imdb
       movie_title = element.css('.titleColumn').text  #ipc-poster-card__title ipc-poster-card__title--clamp-2 ipc-poster-card__title-href
       link_to_summary = "https://www.imdb.com" + element.css('a').attribute("href").value
