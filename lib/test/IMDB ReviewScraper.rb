@@ -8,7 +8,7 @@ class IMDBReviewScraper
 
     homepage.css('.lister-list').css('tr').each do |element|  
       
-      movie_rating = element.css(".ratingColumn.imdbRating").text #ipc-rating-star ipc-rating-star--baseAlt ipc-rating-star--imdb
+     movie_rating = element.css(".ratingColumn.imdbRating").text #ipc-rating-star ipc-rating-star--baseAlt ipc-rating-star--imdb
       movie_title = element.css('.titleColumn').text  #ipc-poster-card__title ipc-poster-card__title--clamp-2 ipc-poster-card__title-href
       link_to_summary = "https://www.imdb.com" + element.css('a').attribute("href").value
       new_review = Review.new(movie_rating, movie_title, link_to_summary)
