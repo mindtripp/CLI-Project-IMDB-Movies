@@ -1,4 +1,4 @@
-require "test/cli/version"
+# require "test/cli/version"
 
 module Test
   module Cli
