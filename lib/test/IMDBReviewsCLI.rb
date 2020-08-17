@@ -1,6 +1,35 @@
+class Display
+
+    def self.greet
+        puts "Hello there, welcome to the IMDB Movie Review!"
+        puts ""
+        puts ""
+        puts "What is your name?"
+    end
+    
+    def self.get_name
+        name = gets.chomp
+        puts ""
+        puts "Welcome, #{name}"
+    end
+    
+    def self.start_scraping
+        puts "We're about to scrape..."
+        puts "Please Wait a few moments..."
+        IMDBReviewScraper.scrape_and_make_reviews
+        puts "Movie list is ready!"
+    end
+
+    
+    def self.prompt_to_pick_review
+        puts "Suprise! We have the top 10 movies in our inventory." 
+        puts "Pick your lucky number to see the corresponding movie summary: (Enter a number from 1 - 10)"
+    end
+
+end
+
 class IMDBReviewsCLI
 
-  
     def run
         system("clear")
         Display.greet
@@ -12,30 +41,10 @@ class IMDBReviewsCLI
             get_and_check_user_input
             print_review = user_choice
         end
-        # validation = false
-        # while validation == false do
-        #     Display.prompt_to_pick_review
-        #     input = gets.strip
-        #         if 0 < input.to_i and input.to_i <= Review.all.size
-        #             validation == true
-        #             review = Review.all[input.to_i-1]
-        #             puts "Here is your selected movie's summary:"
-        #             puts review.movie_title.split("\n")[2]
-        #             puts review.movie_summary
-        #             puts ""
-        #             puts "Do you want to see another movie review?"
-        #             puts "Thanks for visiting IMDB Reviews!"
-        #             break
-        #         elsif input.to_i > Review.all.size
-        #             validation == false
-        #             puts "Please choose a number from 1-10."
-        #         elsif input.to_i == 0 
-        #             validation == false
-        #             puts "Invalid input, please try again (Enter a number)."
-        #         end
-        # end
+        
         
     end
+    
 
     def get_and_check_user_input
             Display.prompt_to_pick_review
